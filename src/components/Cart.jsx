@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import CartCount from "./Cart/CartCount"
 import CartEmpty from "./Cart/CartEmpty"
 import CartItem from "./Cart/CartItem"
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCartItems, selectCartState, selectTotalAmount, selectTotalQTY, setClearCarItems, setCloseCart, setGetTotals } from '../app/CartSlice';
+import {
+    selectCartItems,
+    selectCartState,
+    selectTotalAmount,
+    selectTotalQTY,
+    setClearCarItems,
+    setCloseCart,
+    setGetTotals
+} from '../app/CartSlice';
 
 
 const Cart = () => {
@@ -18,7 +26,7 @@ const Cart = () => {
 
     useEffect(() => {
         dispatch(setGetTotals)
-    },[cartItems, dispatch])
+    }, [cartItems, dispatch])
 
     const onCartToggle = () => {
         dispatch(
