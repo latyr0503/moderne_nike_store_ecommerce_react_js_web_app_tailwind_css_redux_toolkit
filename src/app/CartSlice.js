@@ -54,13 +54,12 @@ const CartSlice = createSlice({
                 toast.success(`Item QTY Increased`);
             }
             localStorage.setItem("cart", JSON.stringify(state.cartItems));
-
         },
         setDecreaseItemQTY: (state, action) => {
             const itemIndex = state.cartItems.findIndex((item) =>
                 item.id === action.payload.id);
 
-            if (state.cartItems[itemIndex].cartQuantity > 1) {
+            if(state.cartItems[itemIndex].cartQuantity > 1) {
                 state.cartItems[itemIndex].cartQuantity -= 1;
 
                 toast.success(`Item QTY Decreased`);

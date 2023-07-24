@@ -12,14 +12,13 @@ const CartItem = ({ item: { id, title, text, img, color, shadow, price, cartQuan
     }
 
     const onIncreaseItemQTY = () => {
-        dispatch(setIncreaseItemQTY({
-            id, title, text, img, color, shadow, price, cartQuantity
-        }))
+        dispatch(setIncreaseItemQTY({ id, title, text, img, color, shadow, price, cartQuantity }))
     };
-    const onDecreaseItemQTY = () => { }
-    dispatch(setDecreaseItemQTY({
-        id, title, text, img, color, shadow, price, cartQuantity
-    }))
+    const onDecreaseItemQTY = () => {
+        dispatch(setDecreaseItemQTY({ id, title, text, img, color, shadow, price, cartQuantity }))
+    }
+
+
     return (
         <>
             <div className='flex items-center justify-between w-full px-5'>
